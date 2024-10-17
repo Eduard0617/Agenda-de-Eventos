@@ -22,10 +22,9 @@
             <div class="popUp" id="slidingPopupUpdate">
                 <span class="close-btn" onclick="togglePopup('slidingPopupUpdate')">&times;</span>
                 <form class="alinha-popUp" action="index.php" method="post">
-                    <div class="insira">Evento que deseja atualizar:</div>
+                    <div class="insira">Id do evento que deseja Atualizar:</div>
                     <p>Nome do Evento:</p>
                     <input class="input" type="text" name="evento">
-                    <hr>
                     <p>Data do Evento:</p>
                     <input class="input" type="date" name="data">
                     <p>Início do Evento:</p>
@@ -42,34 +41,10 @@
                     <input class="cadastro" type="submit" value="Atualizar!">
                 </form>
             </div>
-
-            <button class="delete" onclick="togglePopup('slidingPopupUpdate')">
-                <img src="imagens/delete.png" width="18px" height="18px"> Delete
+            <button class="delete">
+                <img src="imagens/delete.png" width="18px" height="18px">
+                <a> Delete </a>
             </button>
-            <div class="overlay" id="overlay"></div>
-            <div class="popUp" id="slidingPopupUpdate">
-                <span class="close-btn" onclick="togglePopup('slidingPopupUpdate')">&times;</span>
-                <form class="alinha-popUp" action="index.php" method="post">
-                    <div class="insira">Evento que deseja Excluir:</div>
-                    <p>Nome do Evento:</p>
-                    <input class="input" type="text" name="evento">
-                    <hr>
-                    <p>Data do Evento:</p>
-                    <input class="input" type="date" name="data">
-                    <p>Início do Evento:</p>
-                    <input class="input" type="datetime-local" name="inicio">
-                    <p>Fim do Evento:</p>
-                    <input class="input" type="datetime-local" name="fim">
-                    <p>Descrição do Evento:</p>
-                    <input class="input" type="text" name="descricao">
-                    <p>Local do Evento:</p>
-                    <input class="input" type="text" name="local">
-                    <p>Responsável Pelo Evento:</p>
-                    <input class="input" type="text" name="responsavel">
-                    <br/>
-                    <input class="cadastro" type="submit" value="Atualizar!">
-                </form>
-            </div>
         </div>
         <div class="navBar">
             <input type="text" class="buscar" placeholder="Procurar">
@@ -152,6 +127,13 @@
             ?>
         </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+        function togglePopup(popupId) {
+            var popup = document.getElementById(popupId);
+            var overlay = document.getElementById("overlay");
+            popup.classList.toggle("active");
+            overlay.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
