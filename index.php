@@ -17,48 +17,11 @@
                 <div class="titlelogo">Agenda de eventos</div>
             </div>
             <hr class="separa">
-            <button class="update" onclick="togglePopup('slidingPopupUpdate')">
+            <button class="update" onclick="window.location.href='update.html'">
                 <img src="imagens/update.png" width="18px" height="18px"> Update
             </button>
-            <div class="overlay" id="overlay"></div>
-            <div class="popUp" id="slidingPopupUpdate">
-                <span class="close-btn" onclick="togglePopup('slidingPopupUpdate')">&times;</span>
-                <form class="alinha-popUp" action="index.php" method="post">
-                    <div class="insira">Evento que deseja atualizar:</div>
-                    <p>Nome do Evento:</p>
-                    <input class="input" type="text" name="evento">
-                    <hr>
-                    <p>Data do Evento:</p>
-                    <input class="input" type="date" name="data">
-                    <p>Início do Evento:</p>
-                    <input class="input" type="datetime-local" name="inicio">
-                    <p>Fim do Evento:</p>
-                    <input class="input" type="datetime-local" name="fim">
-                    <p>Descrição do Evento:</p>
-                    <input class="input" type="text" name="descricao">
-                    <p>Local do Evento:</p>
-                    <input class="input" type="text" name="local">
-                    <p>Responsável Pelo Evento:</p>
-                    <input class="input" type="text" name="responsavel">
-                    <br />
-                    <input class="cadastro" type="submit" value="Atualizar!">
-                </form>
-                <?php
-                $host = "localhost:3306";
-                $user = "root";
-                $pass = "";
-                $base = "defaultBase"; // Certifique-se de que o nome do banco de dados está correto
-                $conn = mysqli_connect($host, $user, $pass, $base);
 
-                if (!$conn) {
-                    die("Conexão falhou: " . mysqli_connect_error());
-                }
-
-                
-                ?>
-            </div>
-
-            <button class="delete" onclick="togglePopup('slidingPopupUpdate')">
+            <button class="delete" onclick="window.location.href='update.html'">
                 <img src="imagens/delete.png" width="18px" height="18px"> Delete
             </button>
             <div class="overlay" id="overlay"></div>
