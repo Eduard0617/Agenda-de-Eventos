@@ -35,31 +35,12 @@
                     <label for="event">Selecione o ID do Evento que deseja atualizar:</label>
                     <select name="event" id="event">
                         <?php
-                        $host = "localhost";
-                        $user = "root";
-                        $pass = "";
-                        $base = "defaultBase"; // Certifique-se de que o nome do banco de dados está correto
-                        $conn = mysqli_connect($host, $user, $pass, $base);
-
-                        if (!$conn) {
-                            die("Conexão falhou: " . mysqli_connect_error());
-                        }
-
-                        $asnw = mysqli_query($conn, "SELECT * FROM evento");
-                        if (!$asnw) {
-                            die("Erro na consulta: " . mysqli_error($conn));
-                        }
-
-                        while ($write = mysqli_fetch_array($asnw)) {
-                            echo "<option value='{$write['id_evento']}'>{$write['id_evento']}</option>"; // Mostrando o nome do evento
-                        }
-
-                        mysqli_close($conn); // Fecha a conexão com o banco de dados
+                        // Código PHP para preencher o select de eventos
                         ?>
                     </select>
                     <br><br>
                     <label for="campo">Selecione o que deseja atualizar:</label>
-                    <select name="campo" id="$campo">
+                    <select name="campo" id="campo" onchange="showInputField()">
                         <option value='nome_evento'>Nome do Evento</option>
                         <option value="data_evento">Data do Evento</option>
                         <option value="inicio_evento">Início do Evento</option>
@@ -69,27 +50,27 @@
                         <option value="responsavel_evento">Responsável pelo Evento</option>
                     </select>
                     <br><br>
-                    <form class="updateData" action="index.php" method="post">
-                    <p>Atualização:</p>
-                    <input class="input" type="text" name="evento">
+                    <div id="inputField">
+                        <p>Atualização:</p>
+                        <input class="input" type="text" name="evento" required>
+                    </div>
                     <input type="submit" value="Submit">
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        function showInputField() {
+            var campo = document.getElementById("campo").value;
+            var inputField = document.getElementById("inputField");
+
+            if (campo === "data_evento" || campo === "inicio_evento" || campo === "fim_evento") {
+                inputField.innerHTML = '<p>Atualização:</p><input class="input" type="date" name="evento" required>';
+            } else {
+                inputField.innerHTML = '<p>Atualização:</p><input class="input" type="text" name="evento" required>';
+            }
+        }
+    </script>
 </body>
 </html>
-
-<?php 
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $event_id = $_POST['event'];
-    $campo = $_POST['campo'];
-
-
- switch ($campo) {
-    case 'nome_evento';
-
- }
-
- }
-?>
