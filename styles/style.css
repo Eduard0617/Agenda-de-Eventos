@@ -6,7 +6,7 @@ body {
 /* ADICIONANDO FONTE */
 @font-face {
     font-family: coolvetica;
-    src: url(fonte/coolvetica\ rg.otf);
+    src: url(fonte/coolvetica/rg.otf);
 }
 
 /*usando flex para alinhar*/

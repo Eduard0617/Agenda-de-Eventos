@@ -32,8 +32,8 @@
             </div>
             <div class="form">
                 <form action="index.php" method="POST">
-                    <label for="cars">Selecione o ID do Evento que deseja atualizar:</label>
-                    <select name="cars" id="cars">
+                    <label for="event">Selecione o ID do Evento que deseja atualizar:</label>
+                    <select name="event" id="event">
                         <?php
                         $host = "localhost";
                         $user = "root";
@@ -51,19 +51,45 @@
                         }
 
                         while ($write = mysqli_fetch_array($asnw)) {
-                            echo "<option value='{$write['id_evento']}'>{$write['id_evento']}</option>"; // Mostrando o ID
+                            echo "<option value='{$write['id_evento']}'>{$write['id_evento']}</option>"; // Mostrando o nome do evento
                         }
 
                         mysqli_close($conn); // Fecha a conexão com o banco de dados
-
                         ?>
                     </select>
                     <br><br>
+                    <label for="campo">Selecione o que deseja atualizar:</label>
+                    <select name="campo" id="$campo">
+                        <option value='nome_evento'>Nome do Evento</option>
+                        <option value="data_evento">Data do Evento</option>
+                        <option value="inicio_evento">Início do Evento</option>
+                        <option value="fim_evento">Fim do Evento</option>
+                        <option value="desc_evento">Descrição do Evento</option>
+                        <option value="local_evento">Local do Evento</option>
+                        <option value="responsavel_evento">Responsável pelo Evento</option>
+                    </select>
+                    <br><br>
+                    <form class="updateData" action="index.php" method="post">
+                    <p>Atualização:</p>
+                    <input class="input" type="text" name="evento">
                     <input type="submit" value="Submit">
                 </form>
             </div>
         </div>
     </div>
 </body>
-
 </html>
+
+<?php 
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $event_id = $_POST['event'];
+    $campo = $_POST['campo'];
+
+
+ switch ($campo) {
+    case 'nome_evento';
+
+ }
+
+ }
+?>
