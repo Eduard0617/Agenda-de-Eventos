@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="update.css">
+    <link rel="stylesheet" type="text/css" href="./update.css">
     <title>Agenda</title>
 </head>
 <body>
@@ -17,11 +17,11 @@
             </div>
             <hr class="separa">
             <button class="update">
-                <img src="imagens/update.png" width="18px" height="18px"> Update
+                <img src="imagens/update.png" width="18px" height="18px"> UPDATE
             </button>
     </div>
     <div class="navBar">
-        <input type="text" class="buscar" placeholder="Procurar"></input>
+            <input type="text" class="buscar" placeholder="Procurar"></input>
             <a>Update</a>
     </div>
     <div class="banco">

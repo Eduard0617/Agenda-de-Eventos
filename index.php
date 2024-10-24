@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Agenda</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
@@ -17,37 +17,12 @@
                 <div class="titlelogo">Agenda de eventos</div>
             </div>
             <hr class="separa">
-            <button class="update" onclick="window.location.href='update.html'">
+            <button class="update" onclick="window.location.href='update.php'">
                 <img src="imagens/update.png" width="18px" height="18px"> Update
             </button>
-
-            <button class="delete" onclick="window.location.href='update.html'">
+            <button class="delete" onclick="window.location.href='delete.php'">
                 <img src="imagens/delete.png" width="18px" height="18px"> Delete
             </button>
-            <div class="overlay" id="overlay"></div>
-            <div class="popUp" id="slidingPopupUpdate">
-                <span class="close-btn" onclick="togglePopup('slidingPopupUpdate')">&times;</span>
-                <form class="alinha-popUp" action="index.php" method="post">
-                    <div class="insira">Evento que deseja Excluir:</div>
-                    <p>Nome do Evento:</p>
-                    <input class="input" type="text" name="evento">
-                    <hr>
-                    <p>Data do Evento:</p>
-                    <input class="input" type="date" name="data">
-                    <p>Início do Evento:</p>
-                    <input class="input" type="datetime-local" name="inicio">
-                    <p>Fim do Evento:</p>
-                    <input class="input" type="datetime-local" name="fim">
-                    <p>Descrição do Evento:</p>
-                    <input class="input" type="text" name="descricao">
-                    <p>Local do Evento:</p>
-                    <input class="input" type="text" name="local">
-                    <p>Responsável Pelo Evento:</p>
-                    <input class="input" type="text" name="responsavel">
-                    <br />
-                    <input class="cadastro" type="submit" value="Atualizar!">
-                </form>
-            </div>
         </div>
         <div class="navBar">
             <input type="text" class="buscar" placeholder="Procurar">
