@@ -9,6 +9,10 @@ body {
     src: url(fonte/coolvetica/rg.otf);
 }
 
+*{
+    font-family: 'coolvetica' !important;
+}
+
 /*usando flex para alinhar*/
 .container {
     display: flex;

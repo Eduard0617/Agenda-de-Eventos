@@ -171,3 +171,16 @@ select {
     background-color: #f1f0ef;
     border: none;
 }
+
+.link {
+    text-decoration: none;
+    color: black;
+
+}
+
+.cadastro {
+    font-family: 'coolvetica';
+    background-color: #ffcf0f;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+}

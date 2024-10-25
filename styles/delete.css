@@ -3,6 +3,10 @@ body {
     background-color: #F7F5F4;
 }
 
+a.link {
+    text-decoration: none;
+    color: black;
+}
 /* ADICIONANDO FONTE */
 @font-face {
     font-family: coolvetica;
@@ -170,4 +174,11 @@ select {
     font-family: 'coolvetica';
     background-color: #f1f0ef;
     border: none;
+}
+
+.cadastro {
+    font-family: 'coolvetica';
+    background-color: #ffcf0f;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
 }
